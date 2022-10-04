@@ -1,0 +1,9 @@
+--atlas -f rgba8888 -z auto
+grille.png
+rate.png
+touche.png
+coule.png
+croiseur.png
+cuirasse.png
+porte_avion.png
+torpilleur.png
