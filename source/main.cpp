@@ -22,14 +22,7 @@ int main(int argc, char* argv[])
 	if (!spriteSheet) svcBreak(USERBREAK_PANIC);
 	Grille grillePlayer(GrilleTypePlayer, spriteSheet);
 	Grille grilleEnnemy(GrilleTypeEnnemy, spriteSheet);
-
-	grilleEnnemy.marquerTouche((coord){5,5});
-	grilleEnnemy.marquerTouche((coord){6,5});
-
-	grilleEnnemy.marquerRate((coord){1,3});
-	grilleEnnemy.marquerRate((coord){7,4});
-	grilleEnnemy.marquerRate((coord){3,6});
-
+	
 	touchPosition touch;
 	// Main loop
 	while (aptMainLoop())

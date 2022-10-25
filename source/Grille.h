@@ -1,6 +1,4 @@
 #pragma once
-#include "Case.h"
-#include "Coordonnees.h"
 #include <vector>
 #include "citro2d.h"
 
@@ -11,18 +9,22 @@ enum GrilleType {
     GrilleTypeEnnemy
 };
 
+struct Coord {
+    unsigned int x;
+    unsigned int y;
+};
+
 class Grille {
     private:
-        static const int DIM = 10;
+        static const unsigned int DIM = 10;
         GrilleType type;
-        vector<vector<Case>> grille = vector<vector<Case>>(DIM, vector<Case>(DIM, CaseVide));
         C2D_SpriteSheet& spriteSheet;
 
     public:
         Grille(GrilleType type, C2D_SpriteSheet& spriteSheet);
-        void marquerRate(coord coordinate);
-        void marquerTouche(coord coordinate);
-        void marquerCoule(coord coordinate);
+        void marquerRate(Coord coordinate);
+        void marquerTouche(Coord coordinate);
+        void marquerCoule(Coord coordinate);
         void afficherGrille();
-        static bool estDansGrille(coord coordinate);
+        static bool estDansGrille(Coord coordinate);
 };
